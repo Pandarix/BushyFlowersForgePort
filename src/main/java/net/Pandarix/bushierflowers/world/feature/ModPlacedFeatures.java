@@ -19,10 +19,36 @@ public class ModPlacedFeatures {
             DeferredRegister.create(Registry.PLACED_FEATURE_REGISTRY, BushierFlowers.MOD_ID);
 
     public static final RegistryObject<PlacedFeature> GROWN_FLOWER_DEFAULT_PLACED = PLACED_FEATURES.register("grown_flower_default_placed",
-            () -> new PlacedFeature(ModConfiguredFeatures.GROWN_FLOWER_DEFAULT.getHolder().get(), List.of(RarityFilter.onAverageOnceEvery(16),
+            () -> new PlacedFeature(ModConfiguredFeatures.GROWN_FLOWER_DEFAULT.getHolder().get(), List.of(RarityFilter.onAverageOnceEvery(24),
                     InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
 
-    public static void register(IEventBus eventBus){
+    public static final RegistryObject<PlacedFeature> GROWN_FLOWER_FOREST_PLACED = PLACED_FEATURES.register(
+            "grown_flower_flower_forest_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.GROWN_FLOWER_FOREST.getHolder().get(),
+                    List.of(RarityFilter.onAverageOnceEvery(24),
+                            InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
+
+    public static final RegistryObject<PlacedFeature> GROWN_FLOWER_SWAMP_PLACED = PLACED_FEATURES.register(
+            "grown_flower_swamp_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.GROWN_FLOWER_SWAMP.getHolder().get(),
+                    List.of(RarityFilter.onAverageOnceEvery(24),
+                            InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
+
+    public static final RegistryObject<PlacedFeature> GROWN_FLOWER_PLAIN_PLACED = PLACED_FEATURES.register(
+            "grown_flower_plain_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.GROWN_FLOWER_PLAIN.getHolder().get(),
+                    List.of(RarityFilter.onAverageOnceEvery(24),
+                            InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()))
+    );
+
+    public static final RegistryObject<PlacedFeature> GROWN_FLOWER_MEADOW = PLACED_FEATURES.register(
+            "grown_flower_meadow_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.GROWN_FLOWER_MEADOW.getHolder().get(),
+                    List.of(RarityFilter.onAverageOnceEvery(24),
+                            InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()))
+    );
+
+    public static void register(IEventBus eventBus) {
         PLACED_FEATURES.register(eventBus);
     }
 

@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "meadow",
+  "features": "bushierflowers:grown_flower_meadow_placed",
+  "step": "vegetal_decoration"
+}

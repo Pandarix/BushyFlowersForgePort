@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": ["plains", "sunflower_plains"],
+  "features": "bushierflowers:grown_flower_plain_placed",
+  "step": "vegetal_decoration"
+}

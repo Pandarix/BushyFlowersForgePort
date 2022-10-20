@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "flower_forest",
+  "features": "bushierflowers:grown_flower_flower_forest_placed",
+  "step": "vegetal_decoration"
+}

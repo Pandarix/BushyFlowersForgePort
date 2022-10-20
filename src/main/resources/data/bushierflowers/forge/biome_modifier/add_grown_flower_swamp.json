@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "swamp",
+  "features": "bushierflowers:grown_flower_swamp_placed",
+  "step": "vegetal_decoration"
+}
