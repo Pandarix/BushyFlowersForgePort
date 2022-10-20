@@ -13,4 +13,5 @@ public class BushierFlowersMixin {
 	private void init(CallbackInfo info) {
 		BushierFlowers.LOGGER.info("Initializing " + BushierFlowers.MOD_ID + " Mixins");
 	}
+	
 }
