@@ -2,7 +2,6 @@ package net.Pandarix.bushierflowers.world.feature;
 
 import net.Pandarix.bushierflowers.BushierFlowers;
 import net.Pandarix.bushierflowers.block.ModBlocks;
-import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.placement.PlacementUtils;

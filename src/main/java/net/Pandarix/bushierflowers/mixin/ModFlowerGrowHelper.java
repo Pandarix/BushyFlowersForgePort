@@ -1,6 +1,5 @@
 package net.Pandarix.bushierflowers.mixin;
 
-import com.google.common.base.Suppliers;
 import net.Pandarix.bushierflowers.BushierFlowers;
 import net.Pandarix.bushierflowers.block.ModBlocks;
 import net.minecraft.core.BlockPos;
@@ -11,16 +10,11 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-
-import java.util.Arrays;
-import java.util.List;
-import java.util.function.Supplier;
 
 @Mixin(BoneMealItem.class)
 public abstract class ModFlowerGrowHelper {

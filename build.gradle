@@ -162,8 +162,8 @@ dependencies {
 }
 
 mixin {
+    // MixinGradle Settings
     add sourceSets.main, "bushierflowers.refmap.json"
-
     config "bushierflowers.mixins.json"
 
     debug.verbose = true
