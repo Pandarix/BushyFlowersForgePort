@@ -2,11 +2,13 @@ package net.Pandarix.bushierflowers;
 
 import com.mojang.logging.LogUtils;
 import net.Pandarix.bushierflowers.block.ModBlocks;
+import net.Pandarix.bushierflowers.item.ModItemGroup;
 import net.Pandarix.bushierflowers.item.ModItems;
 import net.Pandarix.bushierflowers.util.ModDispenserBehaviour;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.CreativeModeTabEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -34,12 +36,12 @@ public class BushierFlowers {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         LOGGER.info("Bushier Flowers set up");
-        event.enqueueWork(()-> {
+        event.enqueueWork(() -> {
             addPlants();
         });
     }
 
-    private static void addPlants(){
+    private static void addPlants() {
         ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.GROWN_POPPY.getId(), ModBlocks.POTTED_GROWN_POPPY);
         ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.GROWN_LILY.getId(), ModBlocks.POTTED_GROWN_LILY);
         ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.GROWN_ALLIUM.getId(), ModBlocks.POTTED_GROWN_ALLIUM);
@@ -62,6 +64,11 @@ public class BushierFlowers {
             LOGGER.info("Bushier Flowers Client Setup set up");
             BushierFlowersClient.clientSetup(event);
         }
-    }
 
+        @SubscribeEvent
+        public static void registerTab(CreativeModeTabEvent.Register event) {
+            // Add to ingredients tab
+            ModItemGroup.buildContents(event);
+        }
+    }
 }
