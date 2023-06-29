@@ -4,8 +4,6 @@ import com.mojang.logging.LogUtils;
 import net.Pandarix.bushierflowers.block.ModBlocks;
 import net.Pandarix.bushierflowers.item.ModItems;
 import net.Pandarix.bushierflowers.util.ModDispenserBehaviour;
-import net.Pandarix.bushierflowers.world.feature.ModConfiguredFeatures;
-import net.Pandarix.bushierflowers.world.feature.ModPlacedFeatures;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.common.MinecraftForge;
@@ -28,9 +26,6 @@ public class BushierFlowers {
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModDispenserBehaviour.registerDispenserBehaviour();
-
-        ModConfiguredFeatures.register(modEventBus);
-        ModPlacedFeatures.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
