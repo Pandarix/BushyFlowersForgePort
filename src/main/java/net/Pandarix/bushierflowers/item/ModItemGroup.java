@@ -2,39 +2,44 @@ package net.Pandarix.bushierflowers.item;
 
 import net.Pandarix.bushierflowers.BushierFlowers;
 import net.Pandarix.bushierflowers.block.ModBlocks;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.event.CreativeModeTabEvent;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.RegistryObject;
 
+@Mod.EventBusSubscriber(modid = BushierFlowers.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ModItemGroup {
-    // Registered on the MOD event bus
-    public static void buildContents(CreativeModeTabEvent.Register event) {
-        BushierFlowers.LOGGER.info(BushierFlowers.MOD_ID + " CreativeModeTab registered");
+    public static final DeferredRegister<CreativeModeTab> TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, BushierFlowers.MOD_ID);
 
-        event.registerCreativeModeTab(new ResourceLocation(BushierFlowers.MOD_ID, "bushier_flowers"), builder ->
-                // Set name of tab to display
-                builder.title(Component.translatable("item_group." + BushierFlowers.MOD_ID))
-                        // Set icon of creative tab
-                        .icon(() -> new ItemStack(ModBlocks.GROWN_ALLIUM.get()))
-                        // Add default items to tab
-                        .displayItems((params, output) -> {
-                            output.accept(ModBlocks.GROWN_ALLIUM.get());
-                            output.accept(ModBlocks.GROWN_AZURE_BLUET.get());
-                            output.accept(ModBlocks.GROWN_BLUE_ORCHID.get());
-                            output.accept(ModBlocks.GROWN_CORNFLOWER.get());
-                            output.accept(ModBlocks.GROWN_LILY.get());
-                            output.accept(ModBlocks.GROWN_DANDELION.get());
-                            output.accept(ModBlocks.GROWN_ORANGE_TULIP.get());
-                            output.accept(ModBlocks.GROWN_PINK_TULIP.get());
-                            output.accept(ModBlocks.GROWN_RED_TULIP.get());
-                            output.accept(ModBlocks.GROWN_WHITE_TULIP.get());
-                            output.accept(ModBlocks.GROWN_OXEYE_DAISY.get());
-                            output.accept(ModBlocks.GROWN_POPPY.get());
-                            output.accept(ModBlocks.GROWN_WITHER_ROSE.get());
-                        })
-        );
+    public static final RegistryObject<CreativeModeTab> BUSHIERFLOWERS_TAB = TABS.register("bushierflowers_tab",
+            () -> CreativeModeTab.builder()
+                    .title(Component.translatable("item_group.bushierflowers_tab"))
+                    .icon(ModBlocks.GROWN_ALLIUM.get().asItem()::getDefaultInstance)
+                    .build()
+    );
+
+    @SubscribeEvent
+    public static void buildContents(BuildCreativeModeTabContentsEvent event) {
+        if(event.getTab() == BUSHIERFLOWERS_TAB.get()) {
+            event.accept(ModBlocks.GROWN_ALLIUM.get());
+            event.accept(ModBlocks.GROWN_AZURE_BLUET.get());
+            event.accept(ModBlocks.GROWN_BLUE_ORCHID.get());
+            event.accept(ModBlocks.GROWN_CORNFLOWER.get());
+            event.accept(ModBlocks.GROWN_LILY.get());
+            event.accept(ModBlocks.GROWN_DANDELION.get());
+            event.accept(ModBlocks.GROWN_ORANGE_TULIP.get());
+            event.accept(ModBlocks.GROWN_PINK_TULIP.get());
+            event.accept(ModBlocks.GROWN_RED_TULIP.get());
+            event.accept(ModBlocks.GROWN_WHITE_TULIP.get());
+            event.accept(ModBlocks.GROWN_OXEYE_DAISY.get());
+            event.accept(ModBlocks.GROWN_POPPY.get());
+            event.accept(ModBlocks.GROWN_WITHER_ROSE.get());
+            event.accept(ModBlocks.GROWN_TORCHFLOWER.get());
+        }
     }
 }

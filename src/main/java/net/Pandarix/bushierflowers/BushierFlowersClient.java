@@ -27,6 +27,7 @@ public class BushierFlowersClient {
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.GROWN_ALLIUM.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.GROWN_WITHER_ROSE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.GROWN_LILY.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.GROWN_TORCHFLOWER.get(), RenderType.cutout());
         //POTTED FLOWERS------------------------------------------------------------------------------------------------
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_GROWN_POPPY.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_GROWN_RED_TULIP.get(), RenderType.cutout());
@@ -41,5 +42,6 @@ public class BushierFlowersClient {
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_GROWN_ALLIUM.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_GROWN_WITHER_ROSE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_GROWN_LILY.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_GROWN_TORCHFLOWER.get(), RenderType.cutout());
     }
 }

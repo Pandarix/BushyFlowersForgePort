@@ -8,7 +8,6 @@ import net.Pandarix.bushierflowers.util.ModDispenserBehaviour;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.CreativeModeTabEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -27,6 +26,7 @@ public class BushierFlowers {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModItemGroup.TABS.register(modEventBus);
         ModDispenserBehaviour.registerDispenserBehaviour();
 
         modEventBus.addListener(this::commonSetup);
@@ -63,12 +63,6 @@ public class BushierFlowers {
         public static void onClientSetup(FMLClientSetupEvent event) {
             LOGGER.info("Bushier Flowers Client Setup set up");
             BushierFlowersClient.clientSetup(event);
-        }
-
-        @SubscribeEvent
-        public static void registerTab(CreativeModeTabEvent.Register event) {
-            // Add to ingredients tab
-            ModItemGroup.buildContents(event);
         }
     }
 }
