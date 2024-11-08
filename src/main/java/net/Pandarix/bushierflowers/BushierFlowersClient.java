@@ -9,10 +9,12 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
 @Mod.EventBusSubscriber(modid = BushierFlowers.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-public class BushierFlowersClient {
+public class BushierFlowersClient
+{
 
     @SubscribeEvent
-    public static void clientSetup(FMLClientSetupEvent event){
+    public static void clientSetup(FMLClientSetupEvent event)
+    {
         //FLOWERS-------------------------------------------------------------------------------------------------------
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.GROWN_POPPY.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.GROWN_RED_TULIP.get(), RenderType.cutout());

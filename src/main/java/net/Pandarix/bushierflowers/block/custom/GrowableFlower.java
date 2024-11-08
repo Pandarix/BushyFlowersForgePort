@@ -9,12 +9,14 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class GrowableFlower extends FlowerBlock {
+public class GrowableFlower extends FlowerBlock
+{
     /*
     This is the base class of all Growable Flowers in this Mod. This ensures that the Block behaves correctly.
      */
 
-    public GrowableFlower(MobEffect suspiciousStewEffect, int effectDuration, Properties properties) {
+    public GrowableFlower(MobEffect suspiciousStewEffect, int effectDuration, Properties properties)
+    {
         super(suspiciousStewEffect, effectDuration, properties);
     }
 
@@ -24,7 +26,8 @@ public class GrowableFlower extends FlowerBlock {
     private static final VoxelShape SHAPE = Block.box(3, 0, 3, 13, 10, 13);
 
     @Override
-    public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
+    public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context)
+    {
         return SHAPE;
     }
 }

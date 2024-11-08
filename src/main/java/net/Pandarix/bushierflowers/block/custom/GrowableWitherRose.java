@@ -10,17 +10,22 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class GrowableWitherRose extends WitherRoseBlock {
+import java.util.List;
+
+public class GrowableWitherRose extends WitherRoseBlock
+{
     //---------------------------Block Shape stuff---------------------------
     //The blocks outline shape
     private static final VoxelShape SHAPE = Block.box(3, 0, 3, 13, 10, 13);
 
-    public GrowableWitherRose(BlockBehaviour.Properties settings) {
-        super(MobEffects.WITHER, settings);
+    public GrowableWitherRose(BlockBehaviour.Properties settings)
+    {
+        super(List.of(new EffectEntry(MobEffects.WITHER, 40)), settings);
     }
 
     @Override
-    public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
+    public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context)
+    {
         return SHAPE;
     }
 }

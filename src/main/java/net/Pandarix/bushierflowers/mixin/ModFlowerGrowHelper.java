@@ -17,19 +17,23 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(BoneMealItem.class)
-public abstract class ModFlowerGrowHelper {
-    
+public abstract class ModFlowerGrowHelper
+{
+
     //injecting this method into the Bonemeal Blockinteraction
     @Inject(method = "useOn", at = @At("HEAD"))
-    protected void injectWriteMethod(@NotNull UseOnContext context, CallbackInfoReturnable info) {
+    protected void injectWriteMethod(@NotNull UseOnContext context, CallbackInfoReturnable info)
+    {
         Level bushyflowers$level = context.getLevel();
         BlockPos bushyflowers$blockPos = context.getClickedPos();
         Block bushyflowers$testedBlock = bushyflowers$level.getBlockState(bushyflowers$blockPos).getBlock();
         //testing if the clicked Block is a Block our mod will want to replace
-        if (ModBlocks.validFlowers.contains(bushyflowers$testedBlock)) {
+        if (ModBlocks.validFlowers.contains(bushyflowers$testedBlock))
+        {
             BushierFlowers.LOGGER.info("Mixin loaded");
             //only execute if we are on Server Level to prevent syncing issues
-            if (!bushyflowers$level.isClientSide()) {
+            if (!bushyflowers$level.isClientSide())
+            {
                 //getting the grown flower block that corresponds to the flower in question
                 Block bushyflowers$correspondingFlower = ModBlocks.grownFlowers.get().get(ModBlocks.validFlowers.indexOf(bushyflowers$testedBlock));
                 //replacing the Vanilla flower with our custom Mod variant
@@ -43,10 +47,12 @@ public abstract class ModFlowerGrowHelper {
         }
 
         //testing if the clicked Block is a Block of our mod
-        if (ModBlocks.grownFlowers.get().contains(bushyflowers$testedBlock)) {
+        if (ModBlocks.grownFlowers.get().contains(bushyflowers$testedBlock))
+        {
             BushierFlowers.LOGGER.info("Mixin loaded");
             //only execute if we are on Server Level to prevent syncing issues
-            if (!bushyflowers$level.isClientSide()) {
+            if (!bushyflowers$level.isClientSide())
+            {
                 //getting the vanilla flower block that corresponds to the grown flower in question
                 Block bushyflowers$correspondingFlower = ModBlocks.validFlowers.get(ModBlocks.grownFlowers.get().indexOf(bushyflowers$testedBlock));
 
@@ -58,7 +64,7 @@ public abstract class ModFlowerGrowHelper {
                 context.getItemInHand().shrink(1);
             }
             //particles
-            BoneMealItem.addGrowthParticles(bushyflowers$level, bushyflowers$blockPos,15);
+            BoneMealItem.addGrowthParticles(bushyflowers$level, bushyflowers$blockPos, 15);
         }
 
         BushierFlowers.LOGGER.info("Mixin loaded");
