@@ -2,6 +2,7 @@ package net.Pandarix.bushierflowers.block.custom;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.item.component.SuspiciousStewEffects;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.WitherRoseBlock;
@@ -20,7 +21,7 @@ public class GrowableWitherRose extends WitherRoseBlock
 
     public GrowableWitherRose(BlockBehaviour.Properties settings)
     {
-        super(List.of(new EffectEntry(MobEffects.WITHER, 40)), settings);
+        super(new SuspiciousStewEffects(List.of(new SuspiciousStewEffects.Entry(MobEffects.WITHER, 40))), settings);
     }
 
     @Override

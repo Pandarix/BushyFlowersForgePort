@@ -17,6 +17,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
 @Mod(BushierFlowers.MOD_ID)
+@SuppressWarnings("removal")
 public class BushierFlowers
 {
     public static final String MOD_ID = "bushierflowers";

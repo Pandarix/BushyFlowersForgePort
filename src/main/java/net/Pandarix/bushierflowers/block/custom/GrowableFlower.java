@@ -1,6 +1,7 @@
 package net.Pandarix.bushierflowers.block.custom;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
@@ -15,7 +16,7 @@ public class GrowableFlower extends FlowerBlock
     This is the base class of all Growable Flowers in this Mod. This ensures that the Block behaves correctly.
      */
 
-    public GrowableFlower(MobEffect suspiciousStewEffect, int effectDuration, Properties properties)
+    public GrowableFlower(Holder<MobEffect> suspiciousStewEffect, int effectDuration, Properties properties)
     {
         super(suspiciousStewEffect, effectDuration, properties);
     }

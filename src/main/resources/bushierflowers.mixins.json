@@ -6,8 +6,5 @@
   "mixins": [
     "ModFlowerGrowHelper"
   ],
-  "client": [
-    "BushierFlowersMixin"
-  ],
   "minVersion": "0.8"
 }
